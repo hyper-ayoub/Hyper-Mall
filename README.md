@@ -26,7 +26,8 @@
 
 ## ✔Technologies :
 
-![idea](https://github.com/user-attachments/assets/34e8e402-7f92-41ed-ad92-dc6877da8437)
+![Untitled (2)](https://github.com/user-attachments/assets/d22c5f33-a284-483a-960e-9ef7c043dee6)
+
 
 
 ## 😍Challenges :
