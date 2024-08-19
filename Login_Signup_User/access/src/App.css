@@ -1,0 +1,119 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.col-12{
+  align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.access {
+  border: 2px solid black;
+  border-radius: 50% 10%;
+  width: 200px;
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+  text-decoration: none;
+  list-style: none;
+  height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-transition : all 200ms linear;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border: none;
+  color: white;
+  background-color: black;;
+  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+
+.front-1 {
+  float: right;
+  max-width: 100%;
+  width: 200px; /* Adjust width as needed */
+}
+
+ img {
+  display: block; 
+  width: 100%;
+  height: auto; /* Maintains aspect ratio */
+}
+
+h1 {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  color: black;
+}
+ 
+@keyframes animate {
+  0% {
+    background-position: -320%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
