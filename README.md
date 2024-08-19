@@ -42,5 +42,16 @@
 
 ##  🎥Demo live
 
+<div>
+  
+[![mqdefault](https://github.com/user-attachments/assets/f1b24805-978d-44c2-9ad8-3a7835e12b7b)
+](https://www.youtube.com/watch?v=Xqnhb67lSzk&t=71s)
 
-[! [IMAGE ALT TEXT HERE] (https://img.youtube.com/vi/Xqnhb67lSzk&t=71s)](https://www.youtube.com/watch?v=Xqnhb67lSzk&t=71s)
+</div>
+
+
+##   🧿Copyright 
+#   🎓Created by Ayoub bouagna
+
+
+![44707349-5176-4284-b137-6046aba9d666-0](https://github.com/user-attachments/assets/f85855b4-d4ff-40de-b6e5-bd75bc98bcb1)
