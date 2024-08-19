@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240818 21:47:06.918" rpa="false" schemaversion="4">
+<suite id="s1" name="Login" source="D:\Hyper-Mall\Automated Backend\Login\login.robot">
+<test id="s1-t1" name="Login page" line="32">
+<kw name="LunchBrowser">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240818 21:47:07.126" level="INFO">Opening browser 'Edge' to base url 'http://localhost:5050/login'.</msg>
+<status status="PASS" starttime="20240818 21:47:07.125" endtime="20240818 21:47:10.525"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240818 21:47:10.525" endtime="20240818 21:47:10.559"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240818 21:47:16.559" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" starttime="20240818 21:47:10.559" endtime="20240818 21:47:16.559"/>
+</kw>
+<status status="PASS" starttime="20240818 21:47:07.125" endtime="20240818 21:47:16.559"/>
+</kw>
+<kw name="login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id='form3Example3']</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240818 21:47:16.561" level="INFO">Typing text 'ahloha@gmail.COM' into text field '//input[@id='form3Example3']'.</msg>
+<status status="PASS" starttime="20240818 21:47:16.560" endtime="20240818 21:47:16.698"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240818 21:47:18.699" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240818 21:47:16.698" endtime="20240818 21:47:18.699"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@id='form3Example4']</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240818 21:47:18.699" level="INFO">Typing password into text field '//input[@id='form3Example4']'.</msg>
+<msg timestamp="20240818 21:47:18.729" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240818 21:47:18.782" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240818 21:47:18.699" endtime="20240818 21:47:18.782"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240818 21:47:20.783" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240818 21:47:18.782" endtime="20240818 21:47:20.783"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//label[@for='form2Example3']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240818 21:47:20.783" level="INFO">Clicking element '//label[@for='form2Example3']'.</msg>
+<status status="PASS" starttime="20240818 21:47:20.783" endtime="20240818 21:47:20.829"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240818 21:47:22.829" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240818 21:47:20.829" endtime="20240818 21:47:22.829"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@type='button']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240818 21:47:22.829" level="INFO">Clicking button '//button[@type='button']'.</msg>
+<status status="PASS" starttime="20240818 21:47:22.829" endtime="20240818 21:47:22.890"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240818 21:47:28.891" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" starttime="20240818 21:47:22.890" endtime="20240818 21:47:28.891"/>
+</kw>
+<status status="PASS" starttime="20240818 21:47:16.560" endtime="20240818 21:47:28.891"/>
+</kw>
+<status status="PASS" starttime="20240818 21:47:07.124" endtime="20240818 21:47:28.891"/>
+</test>
+<status status="PASS" starttime="20240818 21:47:06.919" endtime="20240818 21:47:28.893"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
