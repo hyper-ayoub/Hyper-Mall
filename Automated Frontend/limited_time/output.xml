@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240819 00:08:59.673" rpa="false" schemaversion="4">
+<suite id="s1" name="Limited" source="D:\Hyper-Mall\Automated Frontend\limited_time\limited.robot">
+<test id="s1-t1" name="Limited_time" line="12">
+<kw name="LaunchBrowser">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240819 00:09:00.028" level="INFO">Opening browser 'Edge' to base url 'http://localhost:3000/#Products'.</msg>
+<status status="PASS" starttime="20240819 00:09:00.028" endtime="20240819 00:09:05.407"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240819 00:09:05.407" endtime="20240819 00:09:05.460"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240819 00:09:11.461" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" starttime="20240819 00:09:05.460" endtime="20240819 00:09:11.461"/>
+</kw>
+<status status="PASS" starttime="20240819 00:09:00.027" endtime="20240819 00:09:11.461"/>
+</kw>
+<kw name="Limited_time">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//body/div[@id='root']/div[8]/div[1]/img[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240819 00:09:11.464" level="INFO">Clicking element '//body/div[@id='root']/div[8]/div[1]/img[1]'.</msg>
+<status status="PASS" starttime="20240819 00:09:11.463" endtime="20240819 00:09:12.676"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240819 00:09:14.676" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240819 00:09:12.676" endtime="20240819 00:09:14.676"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//body/div[@id='root']/div[9]/div[1]/a[1]/i[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240819 00:09:14.677" level="INFO">Clicking element '//body/div[@id='root']/div[9]/div[1]/a[1]/i[1]'.</msg>
+<status status="PASS" starttime="20240819 00:09:14.676" endtime="20240819 00:09:18.343"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240819 00:09:23.343" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240819 00:09:18.343" endtime="20240819 00:09:23.343"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20240819 00:09:23.343" endtime="20240819 00:09:23.461"/>
+</kw>
+<status status="PASS" starttime="20240819 00:09:11.462" endtime="20240819 00:09:23.462"/>
+</kw>
+<status status="PASS" starttime="20240819 00:09:00.026" endtime="20240819 00:09:23.463"/>
+</test>
+<status status="PASS" starttime="20240819 00:08:59.674" endtime="20240819 00:09:23.467"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Limited">Limited</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
