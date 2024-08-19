@@ -1,0 +1,399 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        -30.618690490722656,
+        3.7612500190734863,
+        123.83586120605469
+      ],
+      "min": [
+        -112.65254211425781,
+        -53.385009765625,
+        -2.0327999591827393
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 786384,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        0.9999881386756897,
+        0.999998152256012,
+        0.9998446702957153
+      ],
+      "min": [
+        -0.9999963641166687,
+        -0.9999815821647644,
+        -0.9999920725822449
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 65532,
+      "max": [
+        0.9817100167274475,
+        0.8966900110244751
+      ],
+      "min": [
+        0.0022100000642240047,
+        0.0020800000056624413
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 368415,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1572768,
+      "componentType": 5126,
+      "count": 15300,
+      "max": [
+        -30.618690490722656,
+        4.169119834899902,
+        123.80603790283203
+      ],
+      "min": [
+        -112.71338653564453,
+        -51.54130172729492,
+        -2.0327999591827393
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1756368,
+      "componentType": 5126,
+      "count": 15300,
+      "max": [
+        0.9999950528144836,
+        0.9999616742134094,
+        0.999796450138092
+      ],
+      "min": [
+        -0.9999690651893616,
+        -0.9962601661682129,
+        -0.9999987483024597
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 524256,
+      "componentType": 5126,
+      "count": 15300,
+      "max": [
+        0.9999799728393555,
+        0.8881000280380249
+      ],
+      "min": [
+        0.00215000007301569,
+        0.002139999996870756
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1473660,
+      "componentType": 5125,
+      "count": 68193,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "trev2009 (https://sketchfab.com/trev2009)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/mario-sculpture-blend-d85411fb5459400ca5b2cedb236c8325",
+      "title": "Mario-sculpture-blend"
+    },
+    "generator": "Sketchfab-12.64.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1746432,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 646656,
+      "byteOffset": 1746432,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1939968,
+      "byteOffset": 2393088,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 4333056,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/mario_1_baseColor.jpeg"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "mario_1",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.6
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "mario_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "mario_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 5,
+            "POSITION": 4,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        5
+      ],
+      "name": "Root"
+    },
+    {
+      "children": [
+        3,
+        4
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        69.853,
+        25.2702,
+        -63.29650000000001,
+        1.0
+      ],
+      "name": "mario"
+    },
+    {
+      "mesh": 0,
+      "name": "mario_0"
+    },
+    {
+      "mesh": 1,
+      "name": "mario_0"
+    },
+    {
+      "children": [
+        6,
+        8,
+        10
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.81304,
+        0.6622600000000001,
+        -2.39497,
+        1.0
+      ],
+      "name": "LightPreset"
+    },
+    {
+      "children": [
+        7
+      ],
+      "matrix": [
+        0.39813000000000004,
+        0.7758,
+        -0.48951000000000006,
+        0.0,
+        -0.48951000000000006,
+        0.6309700000000001,
+        0.6018700000000001,
+        0.0,
+        0.7758,
+        -0.0,
+        0.6309700000000001,
+        0.0,
+        1876.20154,
+        0.0,
+        1525.94287,
+        1.0
+      ],
+      "name": "FillLight"
+    },
+    {
+      "name": "FillLight"
+    },
+    {
+      "children": [
+        9
+      ],
+      "matrix": [
+        0.8176400000000001,
+        -0.52783,
+        0.22989000000000004,
+        0.0,
+        0.22989000000000004,
+        0.6654200000000001,
+        0.7101900000000001,
+        0.0,
+        -0.52783,
+        -0.52783,
+        0.6654200000000001,
+        0.0,
+        -664.37671,
+        -664.37671,
+        837.55548,
+        1.0
+      ],
+      "name": "KeyLight"
+    },
+    {
+      "name": "KeyLight"
+    },
+    {
+      "children": [
+        11
+      ],
+      "matrix": [
+        -0.11776000000000003,
+        -0.5954200000000001,
+        0.7947400000000001,
+        0.0,
+        0.7947400000000001,
+        0.42335000000000006,
+        0.43494000000000005,
+        0.0,
+        -0.5954200000000001,
+        0.6828200000000002,
+        0.42335000000000006,
+        0.0,
+        -749.4494,
+        859.46033,
+        532.8654199999999,
+        1.0
+      ],
+      "name": "BackLight"
+    },
+    {
+      "name": "BackLight"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}

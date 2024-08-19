@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mario-sculpture-blend
+* source:	https://sketchfab.com/3d-models/mario-sculpture-blend-d85411fb5459400ca5b2cedb236c8325
+* author:	trev2009 (https://sketchfab.com/trev2009)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mario-sculpture-blend" (https://sketchfab.com/3d-models/mario-sculpture-blend-d85411fb5459400ca5b2cedb236c8325) by trev2009 (https://sketchfab.com/trev2009) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

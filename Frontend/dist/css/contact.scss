@@ -1,0 +1,108 @@
+$color: black;
+$color2: orange;
+$color4: #262626;
+$color5: rgba(255, 255, 255, 0.8); // Adjusted color to a valid RGBA value
+$font-family: 'cursive', serif;
+$font-size: 18px;
+$content: center;
+$size: 860px;
+
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  background-image: url("https://images.unsplash.com/photo-1642615835477-d303d7dc9ee9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  display: flex;
+  place-content: center;
+  height: 100vh;
+  text-align: $content;
+}
+
+/* scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* form */
+.form-area {
+  display: flex;
+  flex-direction: column;
+  align-items: $content;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: $content;
+}
+
+form input,
+form textarea {
+  width: $size;
+  border: 0;
+  outline: none;
+  background: $color4;
+  padding: 15px;
+  margin: 15px 0;
+  color: $color5;
+  font-size: $font-size;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+form .btn2 {
+  padding: 14px 60px;
+  font-size: $font-size;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 40px;
+  background-color: $color4;
+  color: $color5;
+}
+
+form .btn2:hover {
+  background-color: $color2;
+  transition: 0.6s;
+}
+
+form img {
+  width: 500px;
+  border: 2px solid gray;
+  border-radius: 40px;
+}
+
+form img:hover {
+  border-radius: 50px;
+}
+
+/* footer */
+footer {
+  background: $color;
+  padding: 20px 0;
+  color: $color5;
+  text-align: $content;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  form input,
+  form textarea {
+    width: 350px;
+  }
+
+  form img {
+    width: 330px;
+    border: 2px solid gray;
+    border-radius: 40px;
+    margin-top: 90px;
+  }
+
+  form img:hover {
+    border-radius: 50px;
+  }
+}

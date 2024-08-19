@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sign up</title>
+    <link rel="icon" href="{{ url_for('static', filename='g.png') }}">
+    <style>
+        body {
+            background-color: orange;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+
+            grid-template-rows: auto 1fr;
+            /* Added */
+            gap: 20px;
+            /* Added */
+        }
+
+        .container img {
+            max-width: 200px;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 11px 40px;
+            font-size: 0.875rem;
+            line-height: 1.35em;
+            border-radius: 20px;
+            background-color: black;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            transform: transition 0.5s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: orange;
+            color: black;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo2">
+            <img src="https://www.desicomments.com/wp-content/uploads/2017/02/Welcome-Image-1.png" alt="logo" id="logo"
+                sizes="(max-width: 800px) 100vw, 800px">
+        </div>
+        <img src="{{ url_for('static', filename='images/login && sign up/login.png') }}" alt="login Image">
+        <h2>Sign up</h2>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+        <form action="{{ url_for('signup') }}" method="post">
+            <input type="text" name="uid" placeholder="Username"><br>
+            <input type="password" name="pwd" placeholder="Password"><br>
+            <input type="password" name="pwdRepeat" placeholder="Repeat Password"><br>
+            <input type="text" name="Phonenumber" placeholder="Phone-number">
+            <input type="text" name="Zipcode" placeholder="zipcode">
+            <input type="text" name="Address" placeholder="Address">
+            <input type="text" name="email" placeholder="Email">
+
+            <button type="submit">Sign up</button>
+            <p class="bottom">Already have an account? <a class="btn" href="{{url_for('login')}}"> Login here</a></p>
+        </form>
+    </div>
+
+    <div class="moving-cards"></div>
+
+    <footer>
+        <p>All rights reserved &copy;<a href="https://t.me/hyperayoub">@hyper-ayoub</a></p>
+    </footer>
+</body>
+
+</html>

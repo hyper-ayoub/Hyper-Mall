@@ -1,0 +1,99 @@
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "cursive", serif;
+  background-image: url("https://images.unsplash.com/photo-1642615835477-d303d7dc9ee9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  display: flex;
+  place-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* form */
+.form-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input,
+form textarea {
+  width: 860px;
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 15px;
+  margin: 15px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+form .btn2 {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 40px;
+  background-color: #262626;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+form .btn2:hover {
+  background-color: orange;
+  transition: 0.6s;
+}
+
+form img {
+  width: 500px;
+  border: 2px solid gray;
+  border-radius: 40px;
+}
+
+form img:hover {
+  border-radius: 50px;
+}
+
+/* footer */
+footer {
+  background: black;
+  padding: 20px 0;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  form input,
+  form textarea {
+    width: 350px;
+  }
+  form img {
+    width: 330px;
+    border: 2px solid gray;
+    border-radius: 40px;
+    margin-top: 90px;
+  }
+  form img:hover {
+    border-radius: 50px;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

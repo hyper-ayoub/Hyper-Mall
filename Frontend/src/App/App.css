@@ -1,0 +1,66 @@
+/* styling teh google plagin */
+
+.google-login-wrapper {
+    display: flex;
+    justify-content: center; 
+    margin: 20px 0; 
+    align-items: center;
+    bottom: 50px;
+
+  }
+  .google-login-wrapper:hover {
+    transition: 0.6s;;
+    width: 100%;
+
+  }
+
+  /* animation start */
+  
+  .welcome-card {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column;
+    background-color: black; /* Card background color */
+    border: 1px solid white; /* Card border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    padding: 20px; /* Padding inside the card */
+    width: 300px; /* Width of the card */
+    margin: 20px; /* Optional margin */
+    position: fixed; /* Fixed position to keep it on the screen */
+    top: 20px; /* Space from the top */
+    right: 20px; /* Space from the right */
+    opacity: 0; /* Initially hidden */
+    animation: slide-in 0.5s forwards, fade-out 0.5s 3s forwards; /* Apply animations */
+  }
+ /* animation is here */
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%); /* Start position outside the screen */
+      opacity: 0; /* Initially hidden */
+    }
+    to {
+      transform: translateX(0); /* End position */
+      opacity: 1; /* Fully visible */
+    }
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0; /* Fade out */
+      transform: translateX(100%); /* Move out of view */
+    }
+  }
+  
+
+  .loader-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 230px;
+
+  }
+  
+  

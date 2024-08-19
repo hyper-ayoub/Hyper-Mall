@@ -1,0 +1,232 @@
+.test {
+    display: flex;
+    flex-direction: initial ;
+    justify-content: center;
+    padding: 2rem;
+    background: url("https://images.unsplash.com/photo-1687042277586-971369d3d241?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.small-c {
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your layout needs */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* Space between cards */
+}
+
+.col-3 {
+    flex: 1;
+    max-width: 300px; /* Adjust based on your design needs */
+    box-sizing: border-box;
+}
+
+/* Card styling */
+.col-3.card {
+    background: #000; /* Black background for the card */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    color: #fff; /* White text color for contrast */
+    position: relative;
+}
+
+.col-3.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: opacity 0.3s;
+    z-index: 0;
+    opacity: 0;
+}
+
+.col-3.card:hover::before {
+    opacity: 1;
+}
+
+.col-3.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.col-3.card i.fa-quote-left {
+    font-size: 2rem;
+    color: #f39c12; /* Gold color for the quote icon */
+    position: relative;
+    z-index: 1;
+}
+
+.col-3.card p {
+    font-size: 1rem;
+    color: #ddd; /* Lighter color for text */
+    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.col-3.card .rating {
+    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.col-3.card .rating i {
+    color: #f39c12; /* Gold color for the stars */
+    margin: 0 2px;
+    font-size: 1rem;
+}
+
+.col-3.card img {
+    border-radius: 50%;
+    margin-top: 1rem;
+    max-width: 100px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.col-3.card h3 {
+    font-size: 1.25rem;
+    color: #fff; /* White color for the heading */
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer {
+    background-color: black;
+    color: #8181818a;
+}
+
+.footer p {
+    color: #8181818a;
+   
+}
+
+.footer h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer .col-6,
+.col-7,
+.col-8,
+.col-9 {
+    min-width: 250px;
+    margin-bottom: 20px;
+
+}
+
+.footer.col-6 {
+    flex-basis: 30%;
+}
+
+.footer.col-7 {
+    flex: 1;
+    text-align: center;
+}
+
+.footer.col-7 img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.footer.col-8,
+.footer.col-9 {
+    flex-basis: 12%;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+/* brands */
+
+.brands {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 2rem;
+    background-color: #f8f9fa; /* Light background color */
+    height: auto; /* Adjust height to fit content */
+    background-size: cover;
+    margin-top: -6px;
+}
+
+
+
+.row img:hover {
+    transform: scale(0.5s);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .brands {
+        padding: 1rem; 
+    }
+     
+    .col-5 {
+        flex: 1;
+        max-width: 1200px; /* Adjust size for better fit */
+        margin: 5px; /* Adjust margin for better spacing */
+    }
+    .luna {
+        width: 300px;
+        height: 100px;
+    }
+    .ai {
+        border: 1px solid gray;
+        box-shadow: 10px #000;
+        display: flex;
+        flex-direction: row;  /* Change this to 'row' for horizontal layout */
+        border-radius: 40px;
+        width: 80px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .col-5 {
+        max-width: 120px; /* Keep the size reasonable for small screens */
+        margin: 4px; /* Adjust margin to fit better */
+    }
+}
+
+.col-6 {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: contents;
+   
+}
+.ai {
+    border: 1px solid gray;
+   box-shadow: 10px #000;
+   justify-content: center;
+   align-items: center;
+   border-radius: 40px;
+   font-size: large;
+   max-width: 100%;
+   margin-left: 190px;
+   display: inline;
+   
+   
+}
+.ai:hover{
+border-radius: 40%;
+transform: translate(20X);
+transition: 0.8s;
+background-color: #000;
+}

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper-Shop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css') }}">
+    <link rel="Hyper-shop" href="buy-now.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=Madimi+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='images/buy-now.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=Madimi+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+</head>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+    .navbar:hover {
+        background-color: gray;
+    }
+
+    .navbar .nav-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar .nav-header .logo {
+        margin-right: 15px;
+    }
+
+    .navbar ul {
+        display: flex;
+        list-style-type: none;
+    }
+
+    .navbar ul li {
+        margin-right: 20px;
+    }
+
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+        background-color: #555;
+    }
+
+    .navbar-toggle {
+        cursor: pointer;
+        background: none;
+        border: none;
+        display: none;
+    }
+
+    /* Center the spinner */
+    .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background-size: 8%;
+        background: #000 url("{{ url_for('static', filename='images/programming.gif') }}") no-repeat center center;
+        ;
+        background-size: 8%;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .btn22 {
+        display: inline-block;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        user-select: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: 11px 40px;
+        font-size: 0.875rem;
+        line-height: 1.35em;
+        border-radius: 20px;
+        background-color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        transform: transition 0.5s;
+    }
+
+    .btn22:hover {
+        background-color: orange;
+        color: black;
+        transform: translateX(10px);
+    }
+
+
+    .bar {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+    @media screen and (max-width: 768px) {
+        .navbar ul {
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            align-items: center;
+        }
+
+        .navbar:hover {
+            background-color: gray;
+        }
+
+        .navbar ul.show {
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-right: 0;
+            text-align: center;
+        }
+
+        .navbar-toggle {
+            display: block;
+        }
+
+        .bar.active:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .bar.active:nth-child(2) {
+            opacity: 0;
+        }
+
+        .bar.active:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+    }
+
+    /* New CSS to center and add space between nav items */
+    .center {
+        justify-content: center;
+        gap: 20px;
+        /* Space between items */
+    }
+</style>
+<!-- part1 -->
+
+<body>
+    <div class="loader" id="loader"></div>
+
+
+    <!-- Your page content goes here -->
+    <div class="content hide-loader" id="content">
+    </div>
+
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                </div>
+                <nav>
+                    <button class="navbar-toggle" onclick="toggleNavbar()">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <ul id="items" class="center">
+                        <li><a href="#sec1"> Home</a></li>
+                        <li>
+                            <a href="#Products"> Products</a>
+                        </li>
+                        <li>
+                            <a href="#About"> About</a>
+                        </li>
+                        <li>
+                            <a href="#Contact">Contact</a>
+                        </li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('signup') }}">Signup</a></li>
+                        <li><a href="{{ url_for('shop') }}"><i class="fa fa-cart-plus"></i></a></li>
+                    </ul>
+                </nav>
+                <!--                 
+                <img src="{{ url_for('static', filename='images/product/menu.png') }}" alt="" class="menu-icon" onclick="menutoogle()"> -->
+                <div class="cart">
+                    <h2 class="cart-title">Your Cart</h2>
+                    <div class="cart-content">
+                        <div class="cart-box">
+                            <!-- <img src="{{ url_for('static', filename='images/product/14pro_.jpg') }}" alt=""> -->
+                            <div class="detail-box">
+                                <div class="cart-product-title">Iphone 14 Pro max</div>
+                                <div class="cart-price">190$</div>
+                                <input type="number" value="1" class="cart-quantity">
+                            </div>
+                            <i class="fa fa-trash" id="cart-remove"></i>
+
+                        </div>
+                    </div>
+                    <div class="total">
+
+                    </div>
+                    <div class="title-title">Total</div>
+                    <div class="title-price">$0</div>
+
+                    <button type="button" class="btn1">Buy now</button>
+
+                    <i class="fa fa-close" id="close-cart"></i>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1 class="text"> Buy Now With <br> Hyper-ayoub Shop !</h1>
+                <p style="align-items:center ;" class="typewriter"> Welcome to Hyper-Shop, your one-stop destination
+                    for all things extraordinary! <br>Step into a world
+                    where innovation meets convenience, and where the latest trends are just a click away. At
+                    Hyper-Shop, we redefine shopping with a curated selection of top-notch products that cater to
+                    your
+                    every need.</p>
+                <a href="https://github.com/hyper-ayoub" class="btn">Github Profile for More</a>
+            </div>
+            <div class="col-2">
+                <img src="{{ url_for('static', filename='images/product/images/REAL.png') }}" alt="">
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- part2  -->
+    <div class="categories">
+        <div class="small-c">
+            <div class="row">
+                <div class="col-3">
+                    <img src="{{ url_for('static', filename='images/product/images/istockphoto-1199539162-2048x2048-transformed.jpeg') }}"
+                        alt="">
+                </div>
+                <div class="col-3">
+                    <img src="{{ url_for('static', filename='images/product/images/istockphoto-1369993451-2048x2048-transformed.jpeg') }}"
+                        alt="">
+                </div>
+                <div class="col-3">
+                    <img src="{{ url_for('static', filename='images/product/images/istockphoto-1428709516-2048x2048-MiJeba_a9-transformed.jpeg') }}"
+                        alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- search code -->
+    <div class="small-c" id="Products">
+        <div align="center">
+            <input type="text" class="btn22" id="myInput" placeholder="Search" oninput="filterProducts()">
+            <h3 class="center" id="notFoundMessage" style="display: none;">Not Found</h3>
+        </div>
+
+
+
+
+
+        <!-- part3 -->
+
+        <div class="small-c" id="Products">
+
+
+        </div>
+
+
+
+
+
+        <h2 class="title"> Products </h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/14pro_.jpg') }}" alt="">
+                <h4>Iphone 14 Pro Max</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$800</p>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/12.jpg') }}" alt="">
+
+                <h4> Iphone 12 Pro Max</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$700</p>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/11_.jpg') }}" alt="">
+                <h4> Iphone 11 Pro Max</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$500</p>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/15.jpg') }}" alt="">
+                <h4> Iphone 15 Pro Max</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$1,099</p>
+
+
+            </div>
+
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/apple-iphone-11-pro.jpg') }}" alt="">
+                <h4> Iphone 11 Pro Max</h4>
+
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+
+                </div>
+                <p>$450</p>
+            </div>
+
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/note10.jpg') }}" alt="">
+                <h4> Samsung note10</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$188</p>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/s23.jpg') }}" alt="">
+                <h4>Samsung s23</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$1,419</p>
+            </div>
+
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/S24ultra.jpg') }}" alt="">
+                <h4> Samsung s24</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$1,000</p>
+            </div>
+
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/s24.png') }}" alt="">
+                <h4> Samsung s24 ultra</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$1,600</p>
+            </div>
+        </div>
+        <!-- last product -->
+        <h2 class="title"> Last Product</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/product-8.jpg') }}" alt="">
+                <h4> Oiritaly Montre </h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$180</p>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/product-9.jpg') }}" alt="">
+                <h4> Fossil FS5455 </h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$199</p>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/A05s_.jpg') }}" alt="">
+                <h4> Samsung A05</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$158</p>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/A15.jpg') }}" alt="">
+                <h4> Samsung A15</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$158</p>
+            </div>
+
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/TABA9+_.jpg') }}" alt="">
+                <h4> Samsung Tab A9+ 2nd Gen</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$200</p>
+            </div>
+
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/air2_.jpg') }}" alt="">
+                <h4> Airpods pro2</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$29</p>
+            </div>
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/cover_.jpg') }}" alt="">
+                <h4> AirPods Case Pro Cover</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$9</p>
+            </div>
+
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/laptop.jpg') }}" alt="">
+                <h4> Lenovo ideapad 2020</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$400</p>
+            </div>
+
+
+            <div class="col-4">
+                <img src="{{ url_for('static', filename='images/product/61hCz2gKa2L._AC_SY355_.jpg') }}" alt="">
+                <h4> Hp 2021 x360</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-shopping-cart"></i> -->
+                </div>
+                <p>$250</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Black Friday -->
+    <div class="offer" style="align-items:center;">
+        <div class="small-row">
+            <div class="row">
+                <div class="col-2">
+                    <img src="{{ url_for('static', filename='images/product/apple-watch-ultra-1-removebg-preview.png') }}"
+                        alt="" class="img2">
+                </div>
+                <div class="col-2">
+                    <p>Inspired by the most extreme activities, Apple unveils a revolutionary new design with
+                        breakthrough capabilities</p>
+                    <h1>Apple Watch Ultra</h1>
+                    <small> Price : $2099 <br>Available in Hyper-ayoub store only!</small><br>
+                    <a href="" class="btn">Available Soon : 21/6/2024 🛒</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- test -->
+    <div class="test">
+        <div class="small-c" id="#About">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p> I wanted to take a moment to express my heartfelt appreciation for your exceptional service.
+                        Your
+                        dedication and hard work have not gone unnoticed. From the bottom of my heart, thank you for all
+                        your help and support. Your efforts have truly made a difference, and I am incredibly grateful.
+                        I want you to know that your service has been invaluable to me and to many others. Thanks a
+                        million for going above and beyond. Your commitment and passion are inspiring, and I feel
+                        fortunate to have had the opportunity to work with you. Thank you once again for everything you
+                        do!</p>
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/test/R (1).jfif') }}" alt="">
+                    <h3>(#About) Amina Moha</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>I just wanted to extend a sincere thank you for your outstanding service. Your dedication and
+                        professionalism have truly made a difference. It's people like you who make the world a better
+                        place, and I feel fortunate to have crossed paths with someone as exceptional as you. Your hard
+                        work has not gone unnoticed, and I want you to know how much I appreciate everything you do.
+                        Your service is invaluable, and I am grateful for the impact you've had. Thank you for your
+                        tireless efforts and unwavering commitment. You are truly appreciated.
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/test/OIP (1).jfif') }}" alt="">
+                    <h3> Lara batlo</h3>
+                </div>
+                <div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>I wanted to reach out and say a huge thank you for the consideration you've shown with the
+                        pricing of your products. Your decision to offer such competitive prices is truly appreciated.
+                        It's not often that we come across such fair pricing, and it makes a significant difference for
+                        customers like myself. Your commitment to providing value and affordability does not go
+                        unnoticed. Thank you for making your products accessible and for being mindful of your
+                        customers' needs. Your pricing strategy speaks volumes about your dedication to customer
+                        satisfaction, and I am grateful for the opportunity to purchase quality items at such reasonable
+                        prices. Thank you once again for your fair pricing and for putting your customers first.</p>
+                    <div class="rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/test/R.jfif') }}" alt="">
+                    <h3> Ayoub hatchi</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- part4 -->
+
+    <div class="brands">
+        <div class="small-c">
+            <div class="row">
+                <div class="col-5">
+                    <img src="{{ url_for('static', filename='images/img/ALX.png') }}" alt="">
+
+                </div>
+                <div class="col-5">
+                    <!-- <img src="img/holberton.jfif" alt=""> -->
+                    <img src="{{ url_for('static', filename='images/img/logo-coca-cola.png') }}" alt="">
+
+                </div>
+                <div class="col-5">
+                    <img src="{{ url_for('static', filename='images/img/hp.png') }}" alt="">
+
+                </div>
+                <div class="col-5">
+                    <img src="{{ url_for('static', filename='images/img/huawei.png') }}" alt="">
+
+                </div>
+                <div class="col-5">
+                    <img src="{{ url_for('static', filename='images/img/logo-paypal.png') }}" alt="">
+
+                </div>
+                <div class="col-5">
+                    <img src="{{ url_for('static', filename='images/img/icons8-lenovo-240.png') }}" alt="">
+
+                </div>
+                <div class="col-5">
+                    <img src="{{ url_for('static', filename='images/img/holberton.jfif') }}" alt="" width="px"
+                        height="150px">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- part6 -->
+
+    <div class="footer" id="#sec3">
+        <div class="container" id="#sec3">
+            <div class="row" id="#sec3">
+                <div class="col-6" id="#sec3">
+                    <h3>(#sec3)Download App</h3>
+                    <div class="down">
+                        <img src="{{ url_for('static', filename='images/product/app-store.png') }}" alt="">
+                        <img src="{{ url_for('static', filename='images/product/play-store.png') }}" alt="">
+                    </div>
+                    <p>Download App for Android and ios mobile phone</p>
+                </div>
+                <div class="col-7">
+                    <img src="{{ url_for('static', filename='images/buy-now.png') }}" alt="">
+                    <p></p>
+                </div>
+                <div class="col-8">
+                    <h3> Links</h3>
+                    <ul style="font-size:20px ;">
+                        <li>Coupons</li>
+                        <li>Post</li>
+                        <li>Policy</li>
+                        <li>Join channel</li>
+                    </ul>
+                </div>
+                <div class="col-9">
+                    <h3>Follow for more</h3>
+                    <ul style="font-size:20px ;">
+                        <li>Facebook</li>
+                        <li>instagram</li>
+                        <li>Twitter</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="end" style="color: white"> ALL Right Reserved &copy; @Hyper-ayoub 2024 bouagnaayoub@gmail.com </p>
+
+
+        </div>
+    </div>
+
+</body>
+<script>
+
+    function toggleNavbar() {
+        var navbar = document.getElementById('items');
+        if (navbar.style.display === 'flex') {
+            navbar.style.display = 'none';
+        } else {
+            navbar.style.display = 'flex';
+        }
+    }
+</script>
+<script>
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarLinks = document.getElementById('navbar-links');
+
+    navbarToggle.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active');
+    });
+
+    // Select the button element
+    const button = document.querySelector("button");
+
+    // Add a click event listener to the button
+    button.addEventListener("click", done);
+
+    // Define the done function
+    function done() {
+        // Prompt the user with a message and store the input in the 'update' variable
+        const update = prompt('You have successfully registered!');
+
+        // Alert the user with a message
+        alert('Check your email');
+    }
+</script>
+<!-- // var loader // -->
+<script>
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function () {
+        loader.style.display = "none";
+
+    })
+</script>
+
+
+
+
+
+<!-- search items  -->
+<script>
+    function filterProducts() {
+        // Get the search input value
+        var input = document.getElementById("myInput").value.toLowerCase();
+
+        // Get all product containers
+        var products = document.querySelectorAll(".col-4");
+
+        // Counter to keep track of found products
+        var foundCount = 0;
+
+        // Loop through each product container
+        products.forEach(function (product) {
+            var productName = product.querySelector("h4").textContent.toLowerCase();
+
+            // Check if the product name contains the input value
+            if (productName.indexOf(input) > -1) {
+                // If found, display the product
+                product.style.display = "";
+                foundCount++;
+            } else {
+                // If not found, hide the product
+                product.style.display = "none";
+            }
+        });
+
+        // Show or hide "Not Found" message based on search results
+        var notFoundMessage = document.getElementById("notFoundMessage");
+        if (foundCount === 0) {
+            notFoundMessage.style.display = "block";
+        } else {
+            notFoundMessage.style.display = "none";
+        }
+    }
+
+</script>
+
+
+<script>
+    // Show loader
+    var loader = document.getElementById("loader");
+    loader.style.display = "block";
+
+    // Hide content until fully loaded
+    var content = document.getElementById("content");
+    content.classList.add("hide-loader");
+
+    // Check if all images are loaded
+    function imagesLoaded() {
+        var images = document.querySelectorAll('img');
+        for (var i = 0; i < images.length; i++) {
+            if (!images[i].complete) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Function to hide loader and show content
+    function hideLoaderAndShowContent() {
+        loader.style.display = "none";
+        content.classList.remove("hide-loader");
+        // Display body after content is loaded to prevent flickering
+        document.body.style.display = "block";
+    }
+
+    // Once all content is loaded (including images), hide loader and show content
+    function checkLoaded() {
+        if (imagesLoaded()) {
+            hideLoaderAndShowContent();
+        } else {
+            setTimeout(checkLoaded, 100); // Check again in 100ms
+        }
+    }
+
+    window.addEventListener('load', function () {
+        // Check after a short delay to handle image caching
+        setTimeout(checkLoaded, 100);
+    });
+</script>
+</script>
+
+
+
+</html>
