@@ -230,3 +230,14 @@ transform: translate(20X);
 transition: 0.8s;
 background-color: #000;
 }
+iframe{
+    width:334px;
+    width: 12;
+    border: 1px solid gray;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 30px;
+}
