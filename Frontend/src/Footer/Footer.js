@@ -124,8 +124,12 @@ const Footer = () => {
     <img src={download2} alt="" /> 
 
     </div>
+    <div className='map'>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.758295509447!2d-7.613412773529362!3d33.58562437333625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd601a5181ab%3A0xc7038b6c1e2a77e!2sBenjdia%2C%20Bd%20de%20la%20Libert%C3%A9%2C%20Casablanca%2020250!5e0!3m2!1sfr!2sma!4v1724439788993!5m2!1sfr!2sma"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
    <p>Download App for Android and iOS mobile phones</p>
-   </div>
+
+    </div>
       
 
       {/* Footer Section */}
@@ -146,8 +150,7 @@ const Footer = () => {
             </MDBBtn>
             <MDBBtn floating className="m-1" style={{ backgroundColor: '#0082ca' }} href="https://www.linkedin.com/in/ayoub-bouagna-422a41274/" role="button">
               <MDBIcon fab icon="linkedin-in" />
-            </MDBBtn>
-            <MDBBtn floating className="m-1" style={{ backgroundColor: '#333333' }} href="https://github.com/hyper-ayoub" role="button">
+            </MDBBtn>            <MDBBtn floating className="m-1" style={{ backgroundColor: '#333333' }} href="https://github.com/hyper-ayoub" role="button">
               <MDBIcon fab icon="github" />
             </MDBBtn>
           </section>
