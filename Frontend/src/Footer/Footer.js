@@ -138,7 +138,7 @@ const Footer = () => {
             <MDBBtn floating className="m-1" style={{ backgroundColor: '#55acee' }} href="https://x.com/ayoubbouagna" role="button">
               <MDBIcon fab icon="twitter" />
             </MDBBtn>
-            <MDBBtn floating className="m-1" style={{ backgroundColor: '#dd4b39' }} href="#!" role="button">
+            <MDBBtn floating className="m-1" style={{ backgroundColor: '#dd4b39' }} href="mailto:ayoub.bouagna-etu@etu.univh2c.ma" role="button" type='email' required>
               <MDBIcon fab icon="google" />
             </MDBBtn>
             <MDBBtn floating className="m-1" style={{ backgroundColor: '#ac2bac' }} href="https://www.instagram.com/hyperayoub" role="button">
