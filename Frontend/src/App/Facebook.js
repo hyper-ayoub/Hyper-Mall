@@ -41,7 +41,7 @@ export default class Facebook extends Component {
                 </div>
             ) : 
             facebookData = (<FacebookLogin
-                appId="1344611546232622"
+                appId=""
                 autoLoad={true}
                 fields="name,picture"
                 onClick={this.componentClicked}
